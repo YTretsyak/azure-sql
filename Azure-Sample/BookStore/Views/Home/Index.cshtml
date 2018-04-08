@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@model  IEnumerable<BookStore.Db_Models.Book>
+@model  IEnumerable<BookStore.Models.Book>
 @section Footer {
     Все права защищены. Syte Corp. 2015.
 }
@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (BookStore.Db_Models.Book b in Model)
+        @foreach (BookStore.Models.Book b in Model)
         {
             <tr>
                 <td>@b.Name</td>

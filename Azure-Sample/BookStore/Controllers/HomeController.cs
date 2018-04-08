@@ -4,23 +4,18 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using BookStore.Db_Models;
 using BookStore.Models;
-using Book = BookStore.Models.Book;
-using Purchase = BookStore.Models.Purchase;
 
 namespace BookStore.Controllers
 {
     public class HomeController : Controller
     {
         BookContext db = new BookContext();
-        BookStoreEntities bookStoreEntities = new BookStoreEntities();
 
-      public ActionResult Index()
-      {
+	    public ActionResult Index()
+        {
             // получаем из бд все объекты Book
-            //IEnumerable<Book> books = db.Books;
-            IEnumerable<Db_Models.Book> books = bookStoreEntities.Books;
+            IEnumerable<Book> books = db.Books;
             return View(books);
         }
 
