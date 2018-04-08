@@ -82,6 +82,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Spatial, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Spatial.5.8.2\lib\net40\System.Spatial.dll</HintPath>
       <Private>True</Private>
@@ -149,6 +151,39 @@
     <Compile Include="Controllers\PaginationController.cs" />
     <Compile Include="Controllers\SoccerController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Db_Models\Book.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db_Models\BookStore.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookStore.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db_Models\BookStore.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db_Models\BookStore.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookStore.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Db_Models\Cours.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db_Models\Player.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db_Models\Purchase.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db_Models\Student.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db_Models\Team.cs">
+      <DependentUpon>BookStore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,6 +211,16 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Db_Models\BookStore.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookStore.edmx</DependentUpon>
+      <LastGenOutput>BookStore.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Db_Models\BookStore.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookStore.edmx</DependentUpon>
+      <LastGenOutput>BookStore.cs</LastGenOutput>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -187,6 +232,13 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="Db_Models\BookStore.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BookStore.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Db_Models\BookStore.edmx.diagram">
+      <DependentUpon>BookStore.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -243,6 +295,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
